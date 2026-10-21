@@ -25,8 +25,12 @@ def main():
         print("\n1. Add task\n2. View tasks\n3. Quit")
         choice = input("Choose: ")
         if choice == "1":
-            tasks.append(input("Task: "))
-            save_tasks()
+            task = input("Task: ").strip()
+            if task:
+                tasks.append(task)
+                save_tasks()
+            else:
+                print("Task cannot be empty.")
         elif choice == "2":
             show_tasks()
         elif choice == "3":
