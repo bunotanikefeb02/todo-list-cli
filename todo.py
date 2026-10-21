@@ -1,4 +1,18 @@
-tasks = []
+FILENAME = "tasks.txt"
+
+def load_tasks():
+    try:
+        with open(FILENAME) as f:
+            return [line.strip() for line in f if line.strip()]
+    except FileNotFoundError:
+        return []
+
+def save_tasks():
+    with open(FILENAME, "w") as f:
+        for task in tasks:
+            f.write(task + "\n")
+
+tasks = load_tasks()
 
 def show_tasks():
     if not tasks:
@@ -12,6 +26,7 @@ def main():
         choice = input("Choose: ")
         if choice == "1":
             tasks.append(input("Task: "))
+            save_tasks()
         elif choice == "2":
             show_tasks()
         elif choice == "3":
