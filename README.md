@@ -1,7 +1,7 @@
 # To-Do List CLI
 
 **Name:** Ike Feb C. Bunotan
-**IT3R4** YOUR SECTION
+**IT3R4**
 
 ## Description
 A command-line program for adding, viewing, and managing daily tasks.
